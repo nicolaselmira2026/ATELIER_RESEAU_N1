@@ -24,7 +24,7 @@ Objectif : Créer un hébergement sur Pythonanywhere
 Difficulté : Faible (~10 minutes)
 ---------------------------------------------------
 
-Rendez-vous sur **https://www.pythonanywhere.com/** et créez vous un compte.  
+Rendez-vous sur **https://www.pythonanywhere.com/** et créez vous un compte. Puis créez un serveur Web **Flask 3.15**.  
   
 ---------------------------------------------------------------------------------------------
 🧩 Séquence 3 : Les Actions GitHUB (Industrialisation Continue)
@@ -49,35 +49,24 @@ Notions acquises de cette séquence :
 Vous avez vu dans cette séquence comment créer des secrets GiHUB afin de mettre en place de l'industrialisation continue.   
 
 ---------------------------------------------------
-🗺️ Séquence 4 : Mise en service
+🗺️ Séquence 4 : OSI (Open Systems Interconnection)
 ---------------------------------------------------
-Objectif : ...  
-Difficulté : Faible (~10 minutes)
----------------------------------------------------
-   
+Vous pouvez observez les différentes couches OSI sur votre site **{site}.pythonanywhere.com/osi**  
+**Exercice 1 : Définissez les termes suivants (Répondre directement dans GitHub)**    
+🔹Un protocole, 
+🔹Une entité protocolaire,  
+🔹Un service, 
+🔹Une primitive de service, 
+🔹Une Service Data Unit (SDU) par rapport à une PDU 
+🔹Un point d'accès à un service SAP (Service Access Point) 
 
 ---------------------------------------------------
-🔹 Séquence 5 : Exercices
+🗺️ Séquence 5 : Retour sur le protocole DHCP
 ---------------------------------------------------
-Objectif : Travailler..  
-Difficulté : Moyenne (~60 minutes)
----------------------------------------------------
-**Exercice 1 : Création d'une nouvelle fonctionnalité**    
-Créer une nouvelle route dans votre application afin de faire une recherche sur la base du nom d'un client.  
-Cette fonctionnalité sera accéssible via la route suivante : **/fiche_nom/**  
-
-**Exercice 2 : Protection**  
-Cette nouvelle route "/fiche_nom/" est soumise à un contrôle d'accès User. C'est à dire différent des login et mot de passe administrateur.  
-Pour accéder à cette fonctionnalité, l'utilisateur sera authentifié sous les login et mot de passe suivant : **user/12345**
+Vous pouvez observez le protocole DHCP sur votre site **{site}.pythonanywhere.com/dhcp**  
+**Exercice 2 : Créer une image montrant l’encapsulation des couches suivantes**    
+_Collez votre image ici_ 
   
----------------------------------------------------
-🔹 Séquence 6 : Atelier
----------------------------------------------------
-Objectif : Créer une application de biliothèque  
-Difficulté : Moyenne (~180 minutes)
----------------------------------------------------
-...  
-
 --------------------------------------------------------------------
 🧠 Troubleshooting :
 ---------------------------------------------------
