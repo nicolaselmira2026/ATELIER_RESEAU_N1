@@ -101,11 +101,6 @@ def index():
       <li><a href="/osi">/osi</a> — OSI mapping</li>
       <li><a href="/dhcp">/dhcp</a> — Protocole DHCP</li>
       <li><a href="/nat">/nat</a> — Protocole DHCP</li>
-      <li><a href="/service">/service</a> — service contract & dependencies</li>
-      <li><a href="/slow?ms=300">/slow</a> — simulate latency</li>
-      <li><a href="/loss?p=0.2">/loss</a> — simulate errors/loss</li>
-      <li><a href="/qos">/qos</a> — live QoS metrics</li>
-      <li><a href="/qos/reset">/qos/reset</a> — reset window</li>
     </ul>
     """
 
@@ -314,66 +309,6 @@ def nat():
     }
 
     return jsonify(info)
-
-
-
-
-@app.get("/service")
-def service():
-    # Service = interface + contract + dependencies + SLO targets
-    contract = {
-        "service": "network-lab",
-        "version": "1.0",
-        "endpoints": [
-            {"path": "/slow", "method": "GET", "params": {"ms": "int (simulated processing time)"}},
-            {"path": "/loss", "method": "GET", "params": {"p": "float in [0,1] (error probability)"}},
-            {"path": "/qos", "method": "GET", "desc": "QoS metrics computed server-side"},
-        ],
-        "dependencies": [
-            {"type": "runtime", "name": "PythonAnywhere WSGI + Flask"},
-            {"type": "network", "name": "Internet / DNS / TLS termination (platform-managed)"}
-        ],
-        "slo_examples": {
-            "availability": "99.5% monthly (example)",
-            "latency_p95_ms": 400,
-            "error_rate": "< 1%"
-        }
-    }
-    return jsonify(contract)
-
-@app.get("/slow")
-def slow():
-    allowed, retry_after = qos_admit()
-    if not allowed:
-        resp = make_response(jsonify({"error": "rate_limited", "retry_after_s": retry_after}), 429)
-        resp.headers["Retry-After"] = str(retry_after)
-        return resp
-
-    ms = int(request.args.get("ms", "200"))
-    time.sleep(ms / 1000)
-    return jsonify({"ok": True, "simulated_processing_ms": ms})
-
-@app.get("/loss")
-def loss():
-    allowed, retry_after = qos_admit()
-    if not allowed:
-        resp = make_response(jsonify({"error": "rate_limited", "retry_after_s": retry_after}), 429)
-        resp.headers["Retry-After"] = str(retry_after)
-        return resp
-
-    p = float(request.args.get("p", "0.1"))
-    if random.random() < p:
-        return jsonify({"ok": False, "simulated": "loss/error"}), 503
-    return jsonify({"ok": True, "simulated": "no_loss"})
-
-@app.get("/qos")
-def qos():
-    return jsonify(compute_metrics())
-
-@app.get("/qos/reset")
-def qos_reset():
-    WINDOW.clear()
-    return jsonify({"ok": True, "message": "metrics window cleared"})
 
 if __name__ == "__main__":
     # utile en local uniquement
