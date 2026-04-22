@@ -70,9 +70,9 @@ Vous pouvez observez les différentes couches OSI sur votre site **{site}.python
 🗺️ Séquence 5 : Retour sur le protocole DHCP
 ---------------------------------------------------
 Vous pouvez observez le protocole DHCP sur votre site **{site}.pythonanywhere.com/dhcp**  
-  
+![PROTOCOLE DHCP] (protocole_dhcp.png)
 **Exercice 2 : Créer une image montrant l’encapsulation des couches suivantes**    
-_Collez votre image ici_ 
+[SCHEMA ENCAPSULATION] (encapsulation_dhcp.png)
   
 --------------------------------------------------------------------
 🧠 Troubleshooting :
