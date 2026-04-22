@@ -54,12 +54,23 @@ Vous avez vu dans cette séquence comment créer des secrets GiHUB afin de mettr
 Vous pouvez observez les différentes couches OSI sur votre site **{site}.pythonanywhere.com/osi**  
   
 **Exercice 1 : Définissez les termes suivants (Répondre directement dans GitHub)**    
-* Un protocole,  
+* Un protocole,
+* Un protocole : ensemble de règles et conventions qui définissent comment deux entités de même niveau (même couche) communiquent entre elles. Ex : TCP, IP, HTTP.
+*  
 * Une entité protocolaire,
-* Un service,  
-* Une primitive de service,  
-* Une Service Data Unit (SDU) par rapport à une PDU  
-* Un point d'accès à un service SAP (Service Access Point)  
+* Une entité protocolaire : module logiciel ou matériel qui implémente un protocole à une couche donnée. C'est l'acteur qui envoie et reçoit les messages protocolaires.
+* 
+* Un service,
+* Un service : ensemble de fonctionnalités qu'une couche N offre à la couche N+1 (supérieure), via des points d'accès. La couche N+1 utilise le service sans connaître son implémentation interne.
+*  
+* Une primitive de service,
+* Une primitive de service : opération élémentaire permettant à une couche d'accéder au service de la couche inférieure. Il en existe 4 types : REQUEST (demande), INDICATION (notification), RESPONSE (réponse), CONFIRM (confirmation).
+*  
+* Une Service Data Unit (SDU) par rapport à une PDU
+* SDU vs PDU : la SDU (Service Data Unit) est la donnée brute transmise par la couche supérieure à la couche N — c'est ce qu'il faut transporter. La PDU (Protocol Data Unit) est ce que la couche N construit en ajoutant son en-tête (header) à la SDU. Donc : PDU = Header + SDU.
+*  
+* Un point d'accès à un service SAP (Service Access Point)
+* Un SAP (Service Access Point) : point d'accès à un service, c'est l'interface entre deux couches adjacentes. Il identifie de manière unique l'endroit où la couche N+1 peut accéder aux services de la couche N. Ex : un numéro de port est un SAP entre la couche Transport et Application. 
 
 ---------------------------------------------------
 🗺️ Séquence 5 : Retour sur le protocole DHCP
