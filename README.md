@@ -69,7 +69,7 @@ Vous pouvez observez les différentes couches OSI sur votre site **{site}.python
 ---------------------------------------------------
 🗺️ Séquence 5 : Retour sur le protocole DHCP
 ---------------------------------------------------
-Vous pouvez observez le protocole DHCP sur votre site **{site}.pythonanywhere.com/dhcp**  
+Vous pouvez observez le protocole DHCP sur votre site **nicolaselmira2026.pythonanywhere.com/dhcp**  
 ![PROTOCOLE DHCP](protocole_dhcp.png)
 **Exercice 2 : Créer une image montrant l’encapsulation des couches suivantes**    
 ![SCHEMA ENCAPSULATION](encapsulation_dhcp.png)
@@ -83,6 +83,6 @@ Lors de vos développements, vous serez peut-être confronté à des erreurs sys
 Les causes d'erreurs sont quasi illimitées. **Vous devez donc vous tourner vers les logs de votre système pour comprendre d'où vient le problème** :  
 
 Vos log sont accéssible via les URL suivantes :  
-* Access log : {site}.pythonanywhere.com.access.log
-* Error log : {site}.pythonanywhere.com.error.log
-* Server log: {site}.pythonanywhere.com.server.log
+* Access log : nicolaselmira2026.pythonanywhere.com.access.log
+* Error log : nicolaselmira2026.pythonanywhere.com.error.log
+* Server log: nicolaselmira2026.pythonanywhere.com.server.log
